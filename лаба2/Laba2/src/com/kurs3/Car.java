@@ -69,13 +69,13 @@ public class Car {
     }
 
     public static boolean CheckCorrectName(String str){
-        return  str.matches("^\\D*$");
+        return  str.matches("^[A-Z]([a-z -]{0,})");
     }
 
     public static boolean CheckCorrectNumber(String str){
-        int deposit;
+        double deposit;
         try {
-            deposit = Integer.parseInt(str);
+            deposit = Double.parseDouble(str) > 0 ? Double.parseDouble(str) : -1;
         } catch (Exception e) {
             return false;
         }
