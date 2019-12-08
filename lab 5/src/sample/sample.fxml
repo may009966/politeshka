@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="417.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar prefHeight="12.0" prefWidth="666.0" VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Сохранить" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Выйти" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="1050.0">
+         <children>
+            <TextField fx:id="txtSearchColor" focusTraversable="false" layoutX="794.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onChangeSearch" prefHeight="25.0" prefWidth="109.0" promptText="Цвет" AnchorPane.topAnchor="2.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <MenuButton fx:id="btnMenuSearchBy" layoutX="886.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#setItemMenuFind" prefHeight="25.0" prefWidth="150.0" text="По цвету и модели" AnchorPane.topAnchor="34.0">
+               <items>
+                  <MenuItem fx:id="findByColMod" mnemonicParsing="false" text="По цвету и модели" />
+                  <MenuItem fx:id="viewInv" mnemonicParsing="false" text="Список инвесторов" />
+               </items>
+            </MenuButton>
+            <TextField fx:id="txtFIOAdd" layoutX="12.0" layoutY="5.0" onMouseClicked="#onEnteredNumberAdd" prefHeight="25.0" prefWidth="149.0" promptText="Ф.И.О." />
+            <TextField fx:id="txtNumberAdd" layoutX="12.0" layoutY="38.0" onMouseClicked="#onEnteredFullname" promptText="Регистрационный номер" />
+            <TextField fx:id="txtAdressAdd" layoutX="174.0" layoutY="5.0" onMouseClicked="#onEnteredAdress" promptText="Адрес" />
+            <Button fx:id="btnAddCar" layoutX="516.0" layoutY="26.0" mnemonicParsing="false" onAction="#addToListByForm" text="Добавить" />
+            <TextField fx:id="txtYearAdd" layoutX="174.0" layoutY="36.0" onMouseClicked="#onEnteredAdress" promptText="Год выпуска" />
+            <TextField fx:id="txtModelAdd" layoutX="336.0" layoutY="5.0" onMouseClicked="#onEnteredAdress" promptText="Модель" />
+            <Button fx:id="btnDelete" layoutX="649.0" layoutY="34.0" mnemonicParsing="false" onAction="#deleteFromList" text="Удалить" />
+            <TextField fx:id="txtDelete" layoutX="604.0" layoutY="5.0" onMouseClicked="#onEnteredAdress" promptText="Удалить по Номеру" />
+            <Button fx:id="btnSearch" layoutX="818.0" layoutY="34.0" mnemonicParsing="false" onAction="#btnSearch" text="Поиск" />
+            <TextField fx:id="txtcolorAdd" layoutX="336.0" layoutY="36.0" onMouseClicked="#onEnteredAdress" promptText="Цвет" />
+            <TextField fx:id="txtSearchModel" focusTraversable="false" layoutX="927.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onChangeSearch" prefHeight="25.0" prefWidth="109.0" promptText="Модель">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableCars" focusTraversable="false" prefHeight="393.0" prefWidth="756.0">
+         <columns>
+            <TableColumn fx:id="registrationNumberColumn" prefWidth="200.0" text="Регистрационный номер" />
+            <TableColumn fx:id="modelColumn" prefWidth="150.0" text="Модель" />
+            <TableColumn fx:id="yearColumn" prefWidth="150.0" text="Год" />
+            <TableColumn fx:id="colorColumn" prefWidth="150.0" text="Цвет" />
+            <TableColumn fx:id="FullnameColumn" prefWidth="150.0" text="Ф.И.О." />
+            <TableColumn fx:id="adressColumn" prefWidth="250.0" text="Адрес" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>
